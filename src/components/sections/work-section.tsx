@@ -15,33 +15,36 @@ export function WorkSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Проекты
+            Модули
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Избранные работы</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Учебные программы</p>
         </div>
 
         <div className="space-y-6 md:space-y-8">
           {[
             {
               number: "01",
-              title: "ТехноСтарт",
-              category: "Корпоративный портал",
-              year: "2024",
+              title: "Онбординг новых сотрудников",
+              category: "Адаптация и введение в должность",
+              year: "2–3 дня",
               direction: "left",
+              img: "https://cdn.poehali.dev/projects/b46caeec-e55d-4bb7-8941-931a734f347a/files/6264cf57-151a-4014-828a-2fd98fa9019b.jpg",
             },
             {
               number: "02",
-              title: "АльфаТрейд",
-              category: "Финтех платформа",
-              year: "2024",
+              title: "Навыки продаж и переговоров",
+              category: "Прокачка коммерческого блока",
+              year: "5 дней",
               direction: "right",
+              img: "https://cdn.poehali.dev/projects/b46caeec-e55d-4bb7-8941-931a734f347a/files/bc6681ff-439f-4d13-a198-ff636cb6b0f6.jpg",
             },
             {
               number: "03",
-              title: "МедиаПульс",
-              category: "Медиа сервис",
-              year: "2023",
+              title: "Управление командой",
+              category: "Лидерство и менеджмент",
+              year: "7 дней",
               direction: "left",
+              img: "https://cdn.poehali.dev/projects/b46caeec-e55d-4bb7-8941-931a734f347a/files/96e14a85-d578-408c-8966-85fc188df36d.jpg",
             },
           ].map((project, i) => (
             <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
@@ -57,7 +60,7 @@ function ProjectCard({
   index,
   isVisible,
 }: {
-  project: { number: string; title: string; category: string; year: string; direction: string }
+  project: { number: string; title: string; category: string; year: string; direction: string; img: string }
   index: number
   isVisible: boolean
 }) {
@@ -70,17 +73,27 @@ function ProjectCard({
 
   return (
     <div
-      className={`group flex items-center justify-between border-b border-foreground/10 py-6 transition-all duration-700 hover:border-foreground/20 md:py-8 ${getRevealClass()}`}
+      className={`group flex items-center justify-between border-b border-foreground/10 py-5 transition-all duration-700 hover:border-foreground/20 md:py-7 ${getRevealClass()}`}
       style={{
         transitionDelay: `${index * 150}ms`,
         marginLeft: index % 2 === 0 ? "0" : "auto",
         maxWidth: index % 2 === 0 ? "85%" : "90%",
       }}
     >
-      <div className="flex items-baseline gap-4 md:gap-8">
+      <div className="flex items-center gap-4 md:gap-8">
         <span className="font-mono text-sm text-foreground/30 transition-colors group-hover:text-foreground/50 md:text-base">
           {project.number}
         </span>
+        <div
+          className="hidden h-14 w-20 overflow-hidden rounded-lg md:block"
+          style={{ opacity: isVisible ? 1 : 0, transition: "opacity 0.5s" }}
+        >
+          <img
+            src={project.img}
+            alt={project.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
         <div>
           <h3 className="mb-1 font-sans text-2xl font-light text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-3xl lg:text-4xl">
             {project.title}

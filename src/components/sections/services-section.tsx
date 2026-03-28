@@ -15,31 +15,31 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Услуги
+            Форматы
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Наши компетенции</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Как мы обучаем</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Веб-разработка",
-              description: "Создание современных веб-приложений любой сложности",
+              title: "Очные тренинги",
+              description: "Интенсивные групповые занятия с тренером — живое взаимодействие, практика и разбор кейсов",
               direction: "top",
             },
             {
-              title: "UI/UX Дизайн",
-              description: "Проектирование удобных и красивых интерфейсов",
+              title: "Онлайн-курсы",
+              description: "Видеоуроки и тесты в удобном темпе — сотрудник учится, когда удобно, с любого устройства",
               direction: "right",
             },
             {
-              title: "Мобильные приложения",
-              description: "Кроссплатформенная разработка для iOS и Android",
+              title: "Воркшопы и симуляции",
+              description: "Командные упражнения и деловые игры, которые отрабатывают реальные рабочие ситуации",
               direction: "left",
             },
             {
-              title: "Консалтинг",
-              description: "Техническая экспертиза и стратегическое планирование",
+              title: "Индивидуальный коучинг",
+              description: "Персональная работа с руководителями: развитие лидерских качеств и управленческих навыков",
               direction: "bottom",
             },
           ].map((service, i) => (
